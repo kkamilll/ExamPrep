@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS4</title>
+	
+	<script>
+		function sprawdz()
+		{
+			var haslo = document.getElementById("haslo").value;
+			
+			var cyfra = false;
+			for(var i=0; i<haslo.length; i++)
+			{
+				if(haslo[i] == 0 || haslo[i] == 1 || haslo[i] == 2 || haslo[i] == 3 || haslo[i] == 4 || haslo[i] == 5 || haslo[i] == 6 || haslo[i] == 7 || haslo[i] == 8 || haslo[i] == 9) cyfra = true;
+			}
+			
+			if(haslo == "") document.getElementById("wynik").innerHTML = '<span style="color: red">WPISZ HASŁO!</span>';
+			else if(haslo.length > 3 && haslo.length <7 && cyfra==true) document.getElementById("wynik").innerHTML = '<span style="color: blue">ŚREDNIE</span>';
+			else if(haslo.length > 6 && cyfra==true) document.getElementById("wynik").innerHTML = '<span style="color: green">DOBRE</span>';
+			else document.getElementById("wynik").innerHTML = '<span style="color: yellow">SŁABE</span>';
+		}
+	</script>
+	
+</head>
+<body>
+	<form>
+		<label>Twoje hasło: <input type="password" id="haslo"></label> <input type="button" value="Sprawdź" onclick="sprawdz()">
+	</form>
+	
+	<div id="wynik"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS11</title>
+	
+	<script>
+		function licz()
+		{
+			var goscie = document.getElementById("goscie").value;
+			var poprawiny = document.getElementById("poprawiny").checked;
+			
+			if(poprawiny)
+			{
+				var wynik = (goscie*100)*1.3;
+				document.getElementById("wynik").innerHTML = "Koszt Twojego wesela to "+wynik+" złotych";
+			}
+			else
+			{
+				var wynik = goscie*100;
+				document.getElementById("wynik").innerHTML = "Koszt Twojego wesela to "+wynik+" złotych";
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h2>Ile będzie kosztowało moje wesele?</h2>
+	
+	<form>
+		<label>Podaj liczbę gości: <input type="number" id="goscie"></label> <br><br>
+		
+		<input type="checkbox" id="poprawiny"> Wesele z poprawinami? <br><br>
+		
+		<input type="button" value="Oblicz koszt" onclick="licz()">
+	</form>
+	
+	<div id="wynik"></div>
+</body>
+</html>

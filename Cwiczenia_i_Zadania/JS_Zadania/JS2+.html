@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS2</title>
+	
+	<script>
+		function pole()
+		{
+			var bok = document.getElementById("bok").value;
+			
+			if(bok == "" || bok!=parseFloat(bok)) document.getElementById("wynik").innerHTML = "<i>Należy wpisać wartość liczbową.</i>";
+			else
+			{
+				var wynik = bok*bok;
+				document.getElementById("wynik").innerHTML = "P = a<sup>2</sup> = "+wynik;
+			}
+		}
+		
+		function obwod()
+		{
+			var bok = document.getElementById("bok").value;
+			
+			if(bok == "" || bok!=parseFloat(bok)) document.getElementById("wynik").innerHTML = "<i>Należy wpisać wartość liczbową.</i>";
+			else
+			{
+				var wynik = 4*bok;
+				document.getElementById("wynik").innerHTML = "P = 4a = "+wynik;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>KWADRAT</h1>
+	<form>
+		<label><i>Podaj długość boku:</i> <input type="text" id="bok"></label> <br><br>
+		<input type="button" value="licz pole" onclick="pole()"> <input type="button" value="licz obwód" onclick="obwod()">
+	<form> <br><br>
+	
+	<div id="wynik"></div>
+</body>
+</html>

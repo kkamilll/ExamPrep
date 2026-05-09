@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egzaminy Technikum - Lista Zadań</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Zbiór Zadań Egzaminacyjnych</h1>
+            <p class="subtitle">Wszystkie arkusze i rozwiązania w jednym miejscu. Kliknij 'Pobierz', aby uzyskać pliki źródłowe.</p>
+        </header>
+
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Wyszukaj zadanie (np. ryby, 2019, E14)...">
+            
+            <div class="filter-group">
+                <button class="filter-btn active" data-category="All">Wszystkie</button>
+                <button class="filter-btn" data-category="Kwalifikacja_E14">E.14</button>
+                <button class="filter-btn" data-category="Kwalifikacja_EE09">EE.09</button>
+                <button class="filter-btn" data-category="Cwiczenia_i_Zadania">Ćwiczenia</button>
+            </div>
+        </div>
+
+        <main id="exam-grid" class="exam-list">
+            <!-- Lista zadań renderowana przez JS -->
+        </main>
+
+        <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 0.8rem;">
+            © 2026 Egzaminy Technikum - Praktyczny Panel Nauki
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

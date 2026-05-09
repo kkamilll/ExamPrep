@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Stacja paliw</title>
+        <link rel="stylesheet" href="styl5.css">
+    </head>
+    <body>
+        <div id="baner1">
+        <h1>Stacja paliw</h1>
+        </div>
+        <div id="baner2">
+      <a href="stacja.html"><img src="home.png"></a>
+<a href="obliczenia.html"><img src="znak.png"></a>
+        </div>
+        <div id="glowny">
+        <h3>Oblicz koszt paliwa:</h3>
+            Rodzaj paliwa(1-benzyna, 2-olej napedowy)<br><input type="number" id="rodzaj"><br>
+            Ile litrów?<br><input type="number" id="ile"><br>
+            <button onclick="licz()">Oblicz</button>
+            <p id="wynik"></p>
+            <script>
+                function licz(){
+            var rodzaj=document.getElementById("rodzaj").value;
+            var ile=document.getElementById("ile").value;
+            var wynik=document.getElementById("wynik");
+            
+            if(rodzaj==1){
+                wynik.innerHTML="koszt paliwa:"+ile*4+" zł";
+            }
+                   else if(rodzaj==2){
+                wynik.innerHTML="koszt paliwa:"+ile*3.5+" zł";
+            }
+                    else{
+                wynik.innerHTML="koszt paliwa wynosi 0 zł";
+            }
+            }
+            </script>
+            
+        </div>
+        <div id="lewy"><a href="kwerendy.txt">Pobierz kwerendy</a></div>
+        <div id="prawy"><img src="samochod.png" alt="samochod"></div>
+        <footer><p>Strone opracował:matafakus</p></footer>
+    
+      

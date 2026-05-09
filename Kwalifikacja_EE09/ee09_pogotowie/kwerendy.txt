@@ -1,0 +1,3 @@
+SELECT adres, dyspozytorzy_id from zgloszenia where ratownicy_id=3;
+CREATE USER anna3 IDENTIFIED BY 'Fuck!123';
+GRANT SELECT, INSERT, UPDATE ON zgloszenia TO anna3;

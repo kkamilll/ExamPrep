@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS14</title>
+	
+	<script>
+		function licz()
+		{
+			var numer = document.getElementById("numer").value;
+			var waga = document.getElementById("waga").value;
+			
+			if(numer == 1)
+			{
+				var wynik = waga*5;
+				document.getElementById("wynik").innerHTML = "Koszt zamówienia wynosi "+wynik+" zł";
+			}
+			else if(numer == 2)
+			{
+				var wynik = waga*7;
+				document.getElementById("wynik").innerHTML = "Koszt zamówienia wynosi "+wynik+" zł";
+			}
+			else if(numer == 3)
+			{
+				var wynik = waga*6;
+				document.getElementById("wynik").innerHTML = "Koszt zamówienia wynosi "+wynik+" zł";
+			}
+			else document.getElementById("wynik").innerHTML = "Koszt zamówienia wynosi 0 zł";
+		}
+	</script>
+	
+</head>
+<body>
+	<form>
+		<label>Podaj numer kawy: <br><br>
+		<input type="number" id="numer"></label> <br><br>
+		
+		<label>Podaj wagę w dekagramach: <br><br>
+		<input type="number" id="waga"></label> <br><br>
+		
+		<input type="button" value="Zamów" onclick="licz()">
+	</form>
+	
+	<div id="wynik"></div>
+</body>
+</html>

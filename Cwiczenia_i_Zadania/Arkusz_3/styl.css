@@ -1,0 +1,66 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+}
+header{
+    background-color: #b89c14;
+    text-align: center;
+    padding: 10px;
+}
+h1{
+    margin-left: 15px;
+    margin-top: 30px;
+}
+h2{
+    margin-left: 15px;
+}
+nav{
+    margin-top: 15px;
+}
+a{
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 40px;
+}
+a:visited{
+    color: red; 
+}
+#panelb{
+padding: 10px;
+background-color: #8a750f;
+    height: 770px;
+    color: orange;
+    width: 20%;
+    float: right;
+}
+#panelb p{
+    font-size: 20px;
+}
+#zdjecie-konia{
+    margin: 10px;
+}
+#zdjecie-konia img{
+    margin-left: 35%;
+    margin-top: 10px;
+    width: 600px;
+}
+#zdjecie-konia h2{
+    margin-left: 35%;
+}
+#konie-miniaturki{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+#konie-miniaturki img{
+    margin-top: 10px;
+    margin-right: 40px;
+    width: 300px;
+}
+footer{
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    background-color: red;
+    text-align: center;
+}

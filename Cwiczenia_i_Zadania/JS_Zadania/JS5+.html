@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS5</title>
+	<script>
+		function licz()
+		{
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			
+			var pow = (a*b)+(b*2.7*2)+(a*2.7*2);
+			
+			document.getElementById("wynik").innerHTML = "<p>Powierzchnia całkowita ścian: "+pow+"</p>";
+			
+			var cena = pow*8;
+			
+			document.getElementById("wynik2").innerHTML = "Koszt malowania: "+cena+" zł";
+			
+		}
+	</script>
+</head>
+<body>
+	<h1>Malowanie pokoju: 8 zł za m<sup>2</sup></h1>
+	Wymiary pokoju w metrach: <input type="text" id="a"> <input type="number" id="b"> <br><br>
+	<input type="button" value="OBLICZ KOSZT" onclick="licz()">
+	<div id="wynik"></div>
+	<div id="wynik2"></div>
+</body>
+</html>

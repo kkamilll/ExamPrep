@@ -1,0 +1,48 @@
+ body
+ { 
+ background-color:grey;
+ }
+ #gora
+ {  
+
+	 
+	 width:100%;
+	 height:150px;
+	 background-color:#46462f;
+	 margin-left:auto;
+	 margin-right:auto;
+ }
+ #caly_blok {
+	 width: 1200px;
+        font-size:24px;
+      }
+
+      #naglowek {
+		padding-top:5px;
+		padding-bottom:5px;
+        background-color:gold;
+        text-align:center;
+      }
+
+      #lewy {
+        float:left;
+        background-color:#65665c;
+        min-height:550px;
+        width:300px;
+      }
+
+      #prawy {
+		  padding-top:10px;
+		  padding-bottom:10px;
+        float:left;
+        background-color:#65665c;
+        min-height:530px;
+        width:900px;
+      }
+      #stopka {
+        clear:both;
+        background-color:gold;
+       text-align:center;
+      }
+	 
+	 

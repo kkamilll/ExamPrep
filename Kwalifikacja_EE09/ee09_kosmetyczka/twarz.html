@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prognoza pogody Poznań</title>
+        <link rel="stylesheet" href="styl.css" />
+    </head>
+    <body>
+        <section id="lewyg">
+        <h2>W ofercie</h2>
+            <ul>
+            <li><a href="twarz.html">Zabiegi na twarz</a></li>
+                <ol>
+                <li>Piling</li>
+                    <li>Maska</li>
+                    <li>Regulacja brwi</li>
+                </ol>
+                <li>Masaż</li>
+                <li>Diety oczyszczajace</li>
+            </ul>
+            <a href="index.html">Do strony głównej</a>
+        </section>
+        <section id="prawyg">
+        <h1>Salon kosmetyczny</h1>
+        </section>
+         <section id="prawy">
+        <h2>Sprawdź cenę swojej wizyty</h2>
+             <input type="checkbox" id="piling">Piling<br>
+             <input type="checkbox" id="maska">Maska<br>
+             <input type="checkbox" id="masaz">Masaż twarzy<br>
+             <input type="checkbox" id="regulacja">Regulacja brwi<br>
+             <button onclick="licz()">Sprawdź cenę</button>
+             <p id="wynik"></p>
+        </section>
+         <section id="lewy">
+        <img src="obraz1.jpg" alt="Kosmetyczka">
+        </section>
+        <footer>
+        <p>Autor:00000000</p>
+        </footer>
+        <script>
+            function licz(){
+        var piling=document.getElementById("piling").checked;
+        var maska=document.getElementById("maska").checked;
+        var masaz=document.getElementById("masaz").checked;
+        var regul=document.getElementById("regulacja").checked;
+            var wynik=document.getElementById("wynik");
+            var cena=0;
+            
+            if(piling){
+                cena+=45;
+            }
+            if(maska){
+                cena+=30;
+            }
+            if(masaz){
+                cena+=20;
+            }if(regul){
+                cena+=5;
+            }
+            wynik.innerHTML="Cena zabiegów: "+cena+"zł";
+            }
+        </script>
+        
+        </body>
+</html>

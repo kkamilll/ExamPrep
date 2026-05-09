@@ -1,0 +1,60 @@
+body {
+    font-family: Georgia;
+    margin:0px;
+}
+
+#baner{
+    background-color: #824555;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+#g1,#g2{
+    width:30%;
+    height: 300px;
+    background-color: #A26475;
+    color:white;
+    float:left;
+}
+#g3{
+    width:40%;
+    height: 300px;
+    background-color: #A26475;
+    color:white;
+    float:left;
+}
+#glowna{
+    background-color: #F0EAE2;
+    padding:50px;
+    clear:both;
+}
+#stopka{
+    background-color: #824555;
+    color:white;
+    text-align: center;
+    padding:20px;
+}
+table,th,td{
+    border-collapse: collapse;
+    border:2px solid;
+    border-color: #69293A;
+    padding:7px;
+}
+.button1{
+    background-color: red;
+    width: 40px;
+    height:40px;
+}
+.button2{
+    background-color: green;
+    width: 40px;
+    height:40px;
+}
+.button3{
+    background-color: blue;
+    width: 40px;
+    height:40px;
+}
+ul{
+    list-style-type: square;
+}

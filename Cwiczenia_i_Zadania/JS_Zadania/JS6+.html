@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS6</title>
+	
+	<script>
+		function licz()
+		{
+			var pow = document.getElementById("pow").value;
+			
+			if(document.getElementById("r1").checked)
+			{
+				var wynik = pow * 70;
+				document.getElementById("wynik").innerHTML = "Koszt kafelkowania: "+wynik +" zł";
+			}
+			else
+			{
+				var wynik = pow * 80;
+				document.getElementById("wynik").innerHTML = "Koszt kafelkowania: "+wynik +" zł";
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h1>Kafelkowanie łazienki</h1>
+	<form>
+		<label>Powierzchnia w m<sup>2</sup>: <input type="number" id="pow"></label> <br><br>
+		<input type="radio" id="r1" name="plytki"> Płytki 20 x 20 cm <br>
+		<input type="radio" id="r2" name="plytki"> Płytki 25 x 12 cm <br><br>
+		<input type="button" value="PRZELICZ" onclick="licz()"> <br><br>
+		<div id="wynik"></div>
+	</form>
+</body>
+</html>

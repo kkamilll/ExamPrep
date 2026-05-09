@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Formatowanie dokumentów HTML</title>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div id="baner">
+            <h1>Formatowanie dokumentów HTML</h1>
+        </div>
+        <div id="g1">
+            <h2>Przykład lity -hobby</h2>
+        <ul>
+            <li>muzyka</li>
+            <li>turystyka</li>
+            <ol>
+            <li>góry</li>
+            <li>jeziora</li>
+            <li>na rowerze</li>
+            </ol>
+            <li>książki</li>
+            </ul>
+        </div>
+        <div id="g2">
+        <h2>Przykład tabeli -rozkład dnia</h2>
+        <table>
+            <tr>
+                <th>Pora dnia</th><th>obowiązki</th></tr> <tr><td>rano</td><td>nauka</td></tr> <tr><td>południe</td><td>zajęcia dodatkowe</td></tr> <tr><td>popołudnie</td> <td rowspan="2">moje hobby</td> </tr> <tr><td>wieczór</td>
+            
+           
+            </table>
+        </div>
+        <div id="g3"><img src="napisy.png" alt="technologia web"></div>
+        <div id="glowna">
+        Podaj rozmiar tekstu w procentach: <input type="number" id="numer">%
+            <p><select id="typ">
+                <option>prosty</option>
+                <option>kursywa</option>
+                </select></p>
+            <p>Jakim kolorem sformatować teskt? Wybierz przycisk</p>
+            <button class="button1" onclick="formatujCz()"></button><button class="button2" onclick="formatujZ()"></button><button class="button3" onclick="formatujN()"></button>
+            <p id="format">To jest przykład paragrafu, który może być dowolnie formatowany przez Java Script</p>
+        </div>
+        <div id="stopka"><p>Teskt sformatował:xxxxxx</p>
+        <a href="http://formatowanie.pl" target="blank">Odwiedz takze</a></div>
+        
+        <script>
+            function formatujCz(){
+           var typ= document.getElementById("typ").value;
+                var format= document.getElementById("format");
+                var rozmiar=document.getElementById("numer").value;
+                
+              if(typ=="kursywa"){
+                  format.style.fontStyle="italic";
+              }
+                else{
+                    format.style.fontStyle="normal";
+                }
+                format.style.fontSize=""+rozmiar+"%";
+                format.style.color="red";
+            }
+            
+            
+            function formatujZ(){
+           var typ= document.getElementById("typ").value;
+                var format= document.getElementById("format");
+                var rozmiar=document.getElementById("numer").value;
+                
+              if(typ=="kursywa"){
+                  format.style.fontStyle="italic";
+              }
+                 else{
+                    format.style.fontStyle="normal";
+                }
+                format.style.fontSize=""+rozmiar+"%";
+                format.style.color="green";
+            }
+            
+            
+            function formatujN(){
+           var typ= document.getElementById("typ").value;
+                var format= document.getElementById("format");
+                var rozmiar=document.getElementById("numer").value;
+                
+              if(typ=="kursywa"){
+                  format.style.fontStyle="italic";
+              }
+                 else{
+                    format.style.fontStyle="normal";
+                }
+                format.style.fontSize=""+rozmiar+"%";
+                format.style.color="blue";
+            }
+        </script>
+        
+    </body>

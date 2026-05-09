@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS10</title>
+	
+	<script>
+		function oblicz()
+		{
+			var polak = document.getElementById("polak").value;
+			var nowak = document.getElementById("nowak").value;
+			var rysik = document.getElementById("rysik").value;
+			
+			if(polak == "" || polak != parseFloat(polak) || nowak == "" || nowak != parseFloat(nowak) || rysik == "" || rysik != parseFloat(rysik)) alert("wpisz poprawne dane");
+			else
+			{
+				var polak = parseFloat(polak);
+				var nowak = parseFloat(nowak);
+				var rysik = parseFloat(rysik);
+				
+				if(polak>nowak) document.getElementById("wynik").innerHTML = polak;
+				else if(nowak>rysik) document.getElementById("wynik").innerHTML = nowak;
+				else document.getElementById("wynik").innerHTML = rysik;
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h3>Wyznaczanie najwyższej średniej</h3>
+	
+	<form>
+		<ul>
+			<li>Polak <input type="text" id="polak"></li> <br>
+			<li>Nowak <input type="text" id="nowak"></li> <br>
+			<li>Rysik <input type="text" id="rysik"></li> <br>
+		</ul>
+		
+		<input type="button" value="wyznacz" onclick="oblicz()">
+	</form>
+	
+	<h3>Najwyższa średnia:</h3>
+	
+	<div id="wynik"></div>
+</body>
+</html>

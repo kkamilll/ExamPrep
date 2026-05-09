@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS7</title>
+	
+	<script>
+		function licz()
+		{
+			var metraz = document.getElementById("metraz").value;
+			var pokoje = document.getElementById("pokoje").value;
+			
+			if(document.getElementById("kafelki").checked)
+			{
+				var metraz2 = metraz * 4000;
+				var pokoje2 = pokoje * 1000;
+				
+				var wynik = metraz2 + pokoje2 + 2000;
+				
+				document.getElementById("wynik").innerHTML = "Koszt mieszkania: "+wynik+" zł";
+			}
+			else 
+			{
+				var metraz2 = metraz * 4000;
+				var pokoje2 = pokoje * 1000;
+				
+				var wynik = metraz2 + pokoje2;
+				
+				document.getElementById("wynik").innerHTML = "Koszt mieszkania: "+wynik+" zł";
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h1>KALKULATOR CENY MIESZKANIA</h1>
+	
+	Podaj metraż mieszkania w m<sup>2</sup>: <br>
+	<input type="number" id="metraz"> <br><br>
+	
+	Liczba pokoi z zamontowanym okablowaniem sieciowym: <br>
+	<input type="number" id="pokoje"> <br><br>
+	
+	<input type="checkbox" id="kafelki"> Kafelki w łazience? <br><br>
+	
+	<input type="button" value="OBLICZ" onclick="licz()">
+	
+	<div id="wynik"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS8</title>
+	
+	<script>
+		function licz()
+		{
+			var ilosc = document.getElementById("ilosc").value;
+			var upust = document.getElementById("upust").checked;
+			
+			if(ilosc>0 && ilosc<51 && upust==false)
+			{
+				var suma = ilosc*2;
+				document.getElementById("wynik").innerHTML = "Koszt ogłoszeń: "+suma+" PLN";
+			}
+			else if(ilosc>50 && upust==false)
+			{
+				var suma = ilosc;
+				document.getElementById("wynik").innerHTML = "Koszt ogłoszeń: "+suma+" PLN";
+			}
+			else if(ilosc>0 && ilosc<51 && upust)
+			{
+				var suma = ilosc*1.8;
+				document.getElementById("wynik").innerHTML = "Koszt ogłoszeń: "+suma+" PLN";
+			}
+			else if(ilosc>50 && upust)
+			{
+				var suma = ilosc*0.8;
+				document.getElementById("wynik").innerHTML = "Koszt ogłoszeń: "+suma+" PLN";
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h2>Ile kosztuje ogłoszenie?</h2>
+	
+	<form>
+		<label>Podaj liczbę ogłoszeń: <br>
+		<input type="number" id="ilosc"></label> <br><br>
+		
+		<label><input type="checkbox" id="upust"> Policz upust na newsletter</label> <br><br>
+		
+		<input type="button" value="Oblicz" onclick="licz()">
+	</form>
+	
+	<div id="wynik"></div>
+</body>
+</html>

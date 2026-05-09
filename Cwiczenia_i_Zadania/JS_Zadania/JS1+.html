@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS1</title>
+	
+	<script>
+		function dodawanie()
+		{
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			
+			if(a == "" || b == "") document.getElementById("wynik").innerHTML = "<i>Proszę uzupełnić obie liczby.</i>";
+			else
+			{
+				var wynik = parseFloat(a)+parseFloat(b);
+				document.getElementById("wynik").innerHTML = a+" + "+b+" = "+wynik;
+			}
+		}
+		
+		function odejmowanie()
+		{
+			
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			
+			if(a == "" || b == "") document.getElementById("wynik").innerHTML = "<i>Proszę uzupełnić obie liczby.</i>";
+			else
+			{
+				var wynik = a-b;
+				document.getElementById("wynik").innerHTML = a+" - "+b+" = "+wynik;
+			}
+		}
+		
+		function mnozenie()
+		{
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			
+			if(a == "" || b == "") document.getElementById("wynik").innerHTML = "<i>Proszę uzupełnić obie liczby.</i>";
+			else
+			{
+				var wynik = a*b;
+				document.getElementById("wynik").innerHTML = a+" * "+b+" = "+wynik;
+			}
+		}
+		
+		function dzielenie()
+		{
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			
+			if(a == "" || b == "") document.getElementById("wynik").innerHTML = "<i>Proszę uzupełnić obie liczby.</i>";
+			else if(a == 0 || b == 0) document.getElementById("wynik").innerHTML = "<i>Nie wolno dzielić przez zero.</i>";
+			else
+			{
+				var wynik = a/b;
+				document.getElementById("wynik").innerHTML = a+" / "+b+" = "+wynik;
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h1>PROSTE DZIAŁANIA</h1>
+	<form>
+		<label><i>Podaj pierwszą liczbę:</i> <input type="number" id="a"></label> <br><br>
+		<label><i>Podaj drugą liczbę:</i> <input type="number" id="b"></label> <br><br>
+		
+		<input type="button" value="DODAWANIE" onclick="dodawanie()">
+		<input type="button" value="ODEJMOWANIE" onclick="odejmowanie()">
+		<input type="button" value="MNOŻENIE" onclick="mnozenie()">
+		<input type="button" value="DZIELENIE" onclick="dzielenie()">
+	</form> <br>
+	
+	<div id="wynik"></div>
+</body>
+</html>

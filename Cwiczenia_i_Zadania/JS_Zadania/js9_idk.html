@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS9</title>
+	
+	<script>
+		function oblicz()
+		{
+			var polak = document.getElementById("polak").value;
+			var nowak = document.getElementById("nowak").value;
+			var rysik = document.getElementById("rysik").value;
+			
+			if(polak == "" || polak != parseFloat(polak) || nowak == "" || nowak != parseFloat(nowak) || rysik == "" || rysik != parseFloat(rysik)) alert("wpisz poprawne dane");
+			else
+			{
+				var polak = parseFloat(polak);
+				var nowak = parseFloat(nowak);
+				var rysik = parseFloat(rysik);
+				
+				var srednia = (polak + nowak + rysik)/3;
+				document.getElementById("wynik").innerHTML = srednia;
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h4>Obliczanie średniej ocen:</h4>
+	
+	<form>
+		<ul>
+			<li>Polak <input type="text" id="polak"></li> <br>
+			<li>Nowak <input type="text" id="nowak"></li> <br>
+			<li>Rysik <input type="text" id="rysik"></li> <br>
+		</ul>
+		
+		<input type="button" value="oblicz" onclick="oblicz()">
+	</form>
+	
+	<h4>Średnia ocen:</h4>
+	
+	<div id="wynik"></div>
+</body>
+</html>

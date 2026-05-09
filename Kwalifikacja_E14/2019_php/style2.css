@@ -1,0 +1,44 @@
+body{
+    font-family: Helvetica;
+    margin:0px;
+}
+
+#lewa{
+    background-color: Navy;
+    color:white;
+    width:25%;
+    height: 700px;
+    float:left;
+}
+#prawa1{
+    background-color: royalblue;
+    height: 100px;
+    width:75%;
+    float:right;
+    text-align: center;
+}
+#prawa2{
+    background-color: steelblue;
+    height: 300px;
+    width:75%;
+    float:right;
+}
+#prawa3{
+    background-color: royalblue;
+    height: 300px;
+    width:75%;
+    float:right;
+}
+#stopka{
+    background-color: steelblue;
+    text-align: center;
+    padding: 20px;
+    clear:both;
+}
+form{
+    margin:30px;
+    line-height: 3;
+}
+form:hover{
+background-color: deepskyblue;
+}

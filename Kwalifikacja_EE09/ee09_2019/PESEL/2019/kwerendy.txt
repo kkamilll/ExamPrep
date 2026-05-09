@@ -1,0 +1,4 @@
+1. SELECT nazwa, styl_zycia from ryby
+2. SELECT Ryby_id, wymiar_ochronny FROM `okres_ochronny` WHERE wymiar_ochronny<50
+3. SELECT r.nazwa, l.akwen, l.wojewodztwo FROM ryby r JOIN lowisko l ON r.id=l.id where rodzaj=2
+4. ALTER TABLE `ryby` ADD `dobowy_limit` INT NOT NULL AFTER `styl_zycia`;

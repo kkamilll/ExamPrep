@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS15</title>
+	
+	<script>
+		function wykonaj()
+		{
+			var imie = document.getElementById("imie").value;
+			var nazwisko = document.getElementById("nazwisko").value;
+			var usluga = document.getElementById("usluga").value;
+			var regulamin = document.getElementById("regulamin").checked;
+			
+			if(regulamin)
+			{
+				document.getElementById("wynik").style.color = "black";
+				document.getElementById("wynik").innerHTML = "<p>"+imie.toUpperCase()+" "+nazwisko.toUpperCase()+"<br>Treść Twojej sprawy: "+usluga+"<br>Na podany e-mail zostanie wysłana oferta.</p>";
+			}
+			else 
+			{
+				document.getElementById("wynik").style.color = "red";
+				document.getElementById("wynik").innerHTML = "<p>Musisz zapoznać się z regulaminem</p>";
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h2>Kontakt</h2>
+	
+	<form>
+		<table>
+			<tr>
+				<td>Imię:</td>
+				<td><input type="text" id="imie"></td>
+			</tr>
+			
+			<tr>
+				<td>Nazwisko:</td>
+				<td><input type="text" id="nazwisko"></td>
+			</tr>
+			
+			<tr>
+				<td>Usługa:</td>
+				<td><textarea rows="4" cols="35" id="usluga"></textarea></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><input type="checkbox" id="regulamin"> Zapoznałam/łem się z regulaminem</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><input type="reset" value="Resetuj"> <input type="button" value="Prześlij" onclick="wykonaj()"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<div id="wynik"></div>
+</body>
+</html>

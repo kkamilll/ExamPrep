@@ -1,0 +1,2 @@
+1.SELECT miasto_zal,miasto_rozl,ladunek,firma from zlecenia;
+3.

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS12</title>
+	
+	<script>
+		function licz()
+		{
+			var gora = document.getElementById("gora").checked;
+			var km = document.getElementById("km").value;
+			
+			if(gora) document.getElementById("wynik").innerHTML = "Dowieziemy Twoją pizzę za darmo";
+			else
+			{
+				var wynik = km*2;
+				document.getElementById("wynik").innerHTML = "Dowóz będzie Cię kosztował "+wynik+" złotych";
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<h3>Oblicz koszt dostawy</h3>
+	
+	<form>
+		<label><input type="checkbox" id="gora"> Jestem z Zielonej Góry</label>
+		
+		<p>albo</p>
+		
+		<label>Podaj liczbę kilometrów od Zielonej Góry: <input type="number" id="km"></label> <br><br>
+		
+		<input type="button" value="Oblicz" onclick="licz()">
+	</form>
+	
+	<div id="wynik"></div>
+</body>
+</html>

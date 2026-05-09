@@ -1,0 +1,4 @@
+1.select id,cel,cena from wycieczki where dostepna=0;
+2.select nazwaPliku,podpis from zdjecia order by podpis desc;
+3.select podpis,cena,cel from wycieczki join zdjecia on wycieczki.zdjecia_id=zdjecia.id where cena<1200;
+4.alter table wycieczki drop dataWyjazdu;

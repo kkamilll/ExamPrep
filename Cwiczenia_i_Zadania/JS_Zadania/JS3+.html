@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>JS3</title>
+	
+	<script>
+		function kelwin()
+		{
+			var temp = document.getElementById("temperatura").value;
+			
+			if(temp != "" && temp==parseFloat(temp))
+			{
+				var wynik = parseFloat(temp) + 273.15;
+				document.getElementById("wynik").innerHTML = wynik+"K";
+			}
+			else document.getElementById("wynik").innerHTML = "Błąd danych";
+		}
+		
+		function fahrenheit()
+		{
+			var temp = document.getElementById("temperatura").value;
+			
+			if(temp != "" && temp==parseFloat(temp))
+			{
+				var wynik = (temp*1.8) + 32;
+				document.getElementById("wynik").innerHTML = wynik+"F";
+			}
+			else document.getElementById("wynik").innerHTML = "Błąd danych";
+		}
+	</script>
+</head>
+<body>
+	<h2>Zamiana jednostek temperatury</h2>
+	Temperatura w °C <br><br>
+	<form>
+		<input type="text" id="temperatura"> <br><br>
+		Zamień na <br><br>
+		<input type="button" value="Kelwiny" onclick="kelwin()"> <input type="button" value="Fahrenheity" onclick="fahrenheit()">
+	</form> <br>
+	<div id="wynik"></div>
+</body>
+</html>
