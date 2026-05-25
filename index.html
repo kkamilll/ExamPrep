@@ -1,39 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egzaminy Technikum - Lista Zadań</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Prep Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Zbiór Zadań Egzaminacyjnych</h1>
-            <p class="subtitle">Wszystkie arkusze i rozwiązania w jednym miejscu. Kliknij 'Pobierz', aby uzyskać pliki źródłowe.</p>
-        </header>
+      <header>
+        <h1>Exam Prep Dashboard</h1>
+        <p class="subtitle">
+          Przejrzysty panel do szybkiego otwierania arkuszy, rozwiązań i plików
+          SQL z przygotowań egzaminacyjnych.
+        </p>
+      </header>
 
-        <div class="controls">
-            <input type="text" id="search-input" placeholder="Wyszukaj zadanie (np. ryby, 2019, E14)...">
-            
-            <div class="filter-group">
-                <button class="filter-btn active" data-category="All">Wszystkie</button>
-                <button class="filter-btn" data-category="Kwalifikacja_E14">E.14</button>
-                <button class="filter-btn" data-category="Kwalifikacja_EE09">EE.09</button>
-                <button class="filter-btn" data-category="Cwiczenia_i_Zadania">Ćwiczenia</button>
-            </div>
+      <div class="controls">
+        <div class="search-block">
+          <label for="search-input" class="sr-only">Wyszukaj zadanie</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Wyszukaj zadanie / temat / rok..."
+            autocomplete="off"
+          />
         </div>
 
-        <main id="exam-grid" class="exam-list">
-            <!-- Lista zadań renderowana przez JS -->
-        </main>
+        <div class="filter-group">
+          <button class="filter-btn active" data-category="All">
+            Wszystkie
+          </button>
+          <button class="filter-btn" data-category="Kwalifikacja_E14">
+            E.14
+          </button>
+          <button class="filter-btn" data-category="Kwalifikacja_EE09">
+            EE.09
+          </button>
+          <button class="filter-btn" data-category="Cwiczenia_i_Zadania">
+            Ćwiczenia
+          </button>
+        </div>
+      </div>
 
-        <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 0.8rem;">
-            © 2026 Egzaminy Technikum - Praktyczny Panel Nauki
-        </footer>
+      <section class="notice-panel">
+        <h2>Jak korzystać</h2>
+        <ol>
+          <li>Wpisz słowo kluczowe w wyszukiwarce.</li>
+          <li>Wybierz filtrowanie, aby wyświetlić odpowiedni dział.</li>
+          <li>Kliknij <strong>PDF</strong>, aby otworzyć arkusz.</li>
+          <li>
+            Kliknij <strong>Otwórz</strong>, aby przejść do przykładowego
+            rozwiązania.
+          </li>
+          <li>
+            Pliki <code>.php</code> działają tylko z lokalnym serwerem (XAMPP).
+          </li>
+        </ol>
+      </section>
+
+      <div id="summary" class="summary-bar">Ładuję listę zadań...</div>
+
+      <main id="exam-grid" class="exam-list"></main>
+
+      <footer class="main-footer">© 2026 Exam Prep Dashboard</footer>
     </div>
 
     <script src="data.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
