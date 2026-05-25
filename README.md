@@ -1,4 +1,4 @@
-﻿# 🎓 Exam Prep Dashboard (INF.03 / E.14 / EE.09)
+﻿# 🎓 exam_prep (INF.03 / E.14 / EE.09)
 
 ![Status](https://img.shields.io/badge/Status-Zoptymalizowane-success)
 ![Kwalifikacje](https://img.shields.io/badge/Kwalifikacje-E.14%20|%20EE.09%20|%20INF.03-blue)
@@ -33,7 +33,7 @@ Panel umożliwia szybkie wyszukiwanie materiałów bez ręcznego przeglądania f
 ## 📁 Struktura projektu
 
 ```text
-exam-prep-dashboard/
+exam_prep/
 ├── 📄 index.html        <-- Dashboard startowy
 ├── 📄 styles.css        <-- Style strony
 ├── 📄 app.js            <-- Logika listowania i filtrów
@@ -56,11 +56,15 @@ Większość zadań możesz uruchomić bez serwera, bezpośrednio przez `index.h
 Pliki `.php` działają tylko po uruchomieniu lokalnego serwera:
 
 1. Pobierz i zainstaluj [XAMPP](https://www.apachefriends.org/).
-2. Skopiuj repozytorium do `C:\xampp\htdocs\exam-prep-dashboard\`.
+2. Skopiuj repozytorium do `C:\xampp\htdocs\exam_prep\`.
 3. Uruchom Apache i MySQL.
-4. Otwórz `http://localhost/exam-prep-dashboard/index.html`.
+4. Otwórz `http://localhost/exam_prep/index.html`.
 
 > Jeśli folder ma inną nazwę, dostosuj adres w przeglądarce.
+
+## 🔗 Repozytorium GitHub
+
+Odwiedź projekt na GitHub: https://github.com/kkamilll/egzaminy_technikum
 
 ### 3. Import bazy danych
 
