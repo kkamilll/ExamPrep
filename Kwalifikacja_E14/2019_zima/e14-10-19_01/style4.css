@@ -1,0 +1,51 @@
+body
+{
+	font-family: Helvetica;
+	padding: 0px;
+	margin: 0px;
+}
+
+header
+{
+	background-color: DarkCyan;
+	text-align: center;
+	padding: 20px;
+}
+
+nav
+{
+	background-color: LightSeaGreen;
+	text-align: center;
+	padding: 60px;
+}
+
+.blocks
+{
+	float: left;
+	background-color: Teal;
+	color: white;
+	text-align: center;
+	height: 350px;
+	width: 25%;
+}
+
+#bp
+{
+	float: left;
+	background-color: Teal;
+	height: 350px;
+	width: 50%;
+}
+
+footer
+{
+	clear: both;
+	background-color: DarkCyan;
+	color: white;
+	padding: 40px;
+}
+
+ul
+{
+	border: 4px dotted rgb(127,255,212);
+}

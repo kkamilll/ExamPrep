@@ -1,56 +1,32 @@
-# 📖 Przewodnik po Zaktualizowanym Repozytorium
+# 📖 Instrukcja Obsługi i Wskazówki
 
-Wszystkie pliki zostały uporządkowane, naprawione i przygotowane do wygodnej nauki. Poniżej znajduje się opis wprowadzonych zmian i instrukcja obsługi.
+## 🚀 1. Uruchomienie projektu
+Panel posiada wbudowany, lekki serwer HTTP w Node.js (bez zewnętrznych bibliotek).
 
-## 🚀 Nowość: Interaktywny Dashboard
-
-Stworzyłem dedykowany panel nawigacyjny, który pozwala na przeglądanie wszystkich zadań w jednym miejscu.
-
-- **Jak uruchomić?** Otwórz plik [index.html](index.html) w swojej przeglądarce.
-- **Funkcje:**
-  - Wyszukiwanie zadań po nazwie lub numerze arkusza.
-  - Filtrowanie według kwalifikacji (E.14, EE.09).
-  - Szybki dostęp do arkuszy PDF, kodu HTML/PHP oraz plików baz danych SQL.
+- Wpisz w terminalu: `npm start` (lub `npm run dev`)
+- Albo kliknij dwukrotnie plik `start.bat`
+- Panel uruchomi się pod adresem: `http://localhost:3000`
 
 ---
 
-## 🛠️ Wykonane Prace Techniczne
+## 🎯 2. Korzystanie z Panelu
 
-### 1. Rozpakowanie Materiałów
-
-Wszystkie archiwa `.zip`, które znajdowały się w folderach, zostały automatycznie wypakowane do swoich katalogów docelowych. Dzięki temu masz od razu dostęp do grafik i skryptów bez konieczności ręcznego klikania w każde zadanie.
-
-### 2. Automatyczne Poprawki Kodu (Standardy 2024+)
-
-Przeprowadziłem audyt i automatyczną naprawę plików HTML:
-
-- **Usunięcie błędów struktury:** Naprawiłem błędy typu "podwójny DOCTYPE", które pojawiały się w niektórych arkuszach.
-- **Kodowanie znaków:** Dodałem brakujące `<meta charset="utf-8">` tam, gdzie ich brakowało, aby polskie znaki wyświetlały się poprawnie.
-- **Dostępność:** Dodałem atrybut `lang="pl"` do tagu `<html>`, co jest dobrą praktyką i poprawia interpretację strony przez przeglądarki.
-
-### 3. Optymalizacja PHP
-
-Skrypty PHP zostały zweryfikowane pod kątem współpracy z nowszymi wersjami serwerów (np. XAMPP z PHP 8.x). Używają one biblioteki `mysqli`, co jest wymagane na egzaminach.
+| Przycisk | Co robi |
+|---|---|
+| **📄 PDF** | Otwiera oficjalny arkusz egzaminacyjny w przeglądarce. |
+| **🌐 HTML** | Uruchamia stronę internetową zadania w nowej karcie. |
+| **👁️ Kod / Rozwiązanie** | Otwiera okno z podglądem kodu PHP/SQL/HTML/CSS i możliwością skopiowania do schowka. |
+| **📥 Paczka ZIP** | Pobiera pełne archiwum zadania na dysk. |
 
 ---
 
-## 📁 Nowa Struktura Folderów
+## 🛠️ 3. Praca z bazami MySQL i PHP w XAMPP
 
-```text
-exam-prep-dashboard/
-├── 📄 index.html        <-- TWÓJ START (Dashboard)
-├── 📄 styles.css        <-- Style panelu
-├── 📄 app.js            <-- Logika panelu
-├── 📄 manifest.json     <-- Baza danych o zadaniach
-├── 📂 Kwalifikacja_E14/ <-- Zadania E.14
-├── 📂 Kwalifikacja_EE09/ <-- Zadania EE.09
-└── 📂 Cwiczenia_i_Zadania/ <-- Dodatkowe materiały
-```
-
-## 💡 Porady dla Ucznia
-
-1. **Bazy Danych:** Jeśli zadanie wymaga bazy, znajdź przycisk `🗄️ Baza (SQL)` w panelu. Zaimportuj ten plik w `phpMyAdmin`.
-2. **Serwer Lokalny:** Pamiętaj, że pliki `.php` zadziałają tylko po uruchomieniu ich przez serwer (np. XAMPP). Pliki `.html` możesz otwierać bezpośrednio.
-3. **Wyszukiwanie:** Jeśli szukasz konkretnego tematu (np. "ryby" lub "filmoteka"), wpisz to w wyszukiwarkę w Dashboardzie.
-
-Powodzenia w nauce! 🎓
+1. Uruchom **XAMPP Control Panel** i włącz **Apache** oraz **MySQL**.
+2. Otwórz `http://localhost/phpmyadmin` w przeglądarce.
+3. Utwórz nową bazę danych (nazwa jest podana w pliku SQL lub treści arkusza).
+4. Kliknij zakładkę **Importuj** i wybierz plik `.sql` z katalogu danego zadania.
+5. Jeśli plik `.php` łączy się z bazą, domyślne dane logowania w XAMPP to:
+   - Host: `localhost`
+   - Użytkownik: `root`
+   - Hasło: *(puste)*

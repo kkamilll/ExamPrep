@@ -1,74 +1,301 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exam_prep</title>
+    <title>Exam Prep — Arkusze, Rozwiązania i Instrukcje (INF.03 / E.14 / EE.09)</title>
+    <meta
+      name="description"
+      content="Nowoczesny panel przygotowania do egzaminów zawodowych E.14, EE.09 oraz INF.03. Arkusze PDF, gotowe rozwiązania, instrukcje i paczki ZIP."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Ambient glow decorations -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
     <div class="container">
-      <header>
-        <h1>Exam prep</h1>
-        <p class="subtitle">
-          Przejrzysty panel do szybkiego otwierania arkuszy, rozwiązań i plików
-          SQL z przygotowań egzaminacyjnych.
-        </p>
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-top">
+          <div class="brand">
+            <h1>Exam Prep Hub</h1>
+          </div>
+        </div>
       </header>
 
-      <div class="controls">
-        <div class="search-block">
-          <label for="search-input" class="sr-only">Wyszukaj zadanie</label>
-          <input
-            id="search-input"
-            type="search"
-            placeholder="Wyszukaj zadanie / temat / rok..."
-            autocomplete="off"
-          />
+      <!-- Controls Panel -->
+      <section class="controls-panel">
+        <div class="search-row">
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Wyszukaj zadanie po nazwie, roku, temacie..."
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button
+              id="search-clear-btn"
+              class="clear-btn hidden"
+              title="Wyczyść wyszukiwanie"
+            >
+              ✕
+            </button>
+            <span class="search-shortcut" title="Naciśnij / aby szukać">/</span>
+          </div>
         </div>
 
-        <div class="filter-group">
-          <button class="filter-btn active" data-category="All">
-            Wszystkie
-          </button>
-          <button class="filter-btn" data-category="Kwalifikacja_E14">
-            E.14
-          </button>
-          <button class="filter-btn" data-category="Kwalifikacja_EE09">
-            EE.09
-          </button>
-          <button class="filter-btn" data-category="Cwiczenia_i_Zadania">
-            Ćwiczenia
-          </button>
-        </div>
-      </div>
+        <div class="filters-row">
+          <div class="category-tabs" id="category-tabs">
+            <button class="cat-tab active" data-category="All">
+              Wszystkie <span class="tab-count" id="count-all"></span>
+            </button>
+            <button class="cat-tab" data-category="Kwalifikacja_E14">
+              E.14 <span class="tab-count" id="count-e14"></span>
+            </button>
+            <button class="cat-tab" data-category="Kwalifikacja_EE09">
+              EE.09 <span class="tab-count" id="count-ee09"></span>
+            </button>
+            <button class="cat-tab" data-category="Cwiczenia_i_Zadania">
+              Ćwiczenia <span class="tab-count" id="count-cw"></span>
+            </button>
+          </div>
 
-      <section class="notice-panel">
-        <h2>Jak korzystać</h2>
-        <ol>
-          <li>Wpisz słowo kluczowe w wyszukiwarce.</li>
-          <li>Wybierz filtrowanie, aby wyświetlić odpowiedni dział.</li>
-          <li>Kliknij <strong>PDF</strong>, aby otworzyć arkusz.</li>
-          <li>
-            Kliknij <strong>Otwórz</strong>, aby przejść do przykładowego
-            rozwiązania.
-          </li>
-          <li>
-            Pliki <code>.php</code> działają tylko z lokalnym serwerem (XAMPP).
-          </li>
-        </ol>
+          <div class="chip-filters">
+            <button class="chip-btn" data-filter="hasPdf">
+              📄 PDF
+            </button>
+            <button class="chip-btn" data-filter="hasPhp">
+              🐘 PHP
+            </button>
+            <button class="chip-btn" data-filter="hasSql">
+              💾 SQL
+            </button>
+            <button class="chip-btn" data-filter="hasHtml">
+              🌐 HTML
+            </button>
+          </div>
+        </div>
       </section>
 
-      <div id="summary" class="summary-bar">Ładuję listę zadań...</div>
-
-      <main id="exam-grid" class="exam-list"></main>
-
-      <footer class="main-footer">© 2026 exam_prep</footer>
+      <!-- Exam Cards Grid -->
+      <main id="exam-grid" class="exam-grid" aria-live="polite">
+        <!-- Dynamically rendered -->
+      </main>
     </div>
+
+    <!-- Main Modal (Code & README Instructions Viewer) -->
+    <div
+      id="code-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-window">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-badge" id="modal-category-badge">E.14</span>
+            <h2 id="modal-title">Podgląd zadania</h2>
+          </div>
+          <button
+            id="modal-close-btn"
+            class="modal-close"
+            title="Zamknij (Esc)"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Toolbar with File Tabs -->
+        <div class="modal-toolbar" id="modal-toolbar">
+          <div class="modal-files-tabs" id="modal-files-tabs">
+            <!-- Tabs rendered dynamically -->
+          </div>
+          <div class="modal-actions">
+            <button
+              id="copy-code-btn"
+              class="action-btn"
+              title="Kopiuj zawartość do schowka"
+            >
+              📋 Kopiuj kod
+            </button>
+            <a
+              id="download-file-btn"
+              class="action-btn"
+              href="#"
+              download
+              title="Pobierz ten pojedynczy plik"
+            >
+              📥 Pobierz plik
+            </a>
+            <a
+              id="download-zip-modal-btn"
+              class="action-btn primary"
+              href="#"
+              download
+              title="Pobierz całą paczkę zadania z instrukcją ZIP"
+            >
+              📦 Pobierz ZIP
+            </a>
+            <a
+              id="open-tab-btn"
+              class="action-btn hidden"
+              href="#"
+              target="_blank"
+              title="Uruchom stronę w nowej karcie"
+            >
+              🚀 Uruchom w karcie
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div id="modal-info-banner" class="modal-info-banner hidden"></div>
+          
+          <!-- Instructions view (Markdown) -->
+          <div id="modal-readme-view" class="readme-container hidden">
+            <!-- Markdown rendered here -->
+          </div>
+
+          <!-- Code view -->
+          <div class="code-container" id="code-container">
+            <pre><code id="modal-code-content">Ładowanie zawartości...</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explanation Modal (Why PHP/MySQL cannot be run as plain static HTML without server) -->
+    <div
+      id="explain-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop" id="explain-backdrop"></div>
+      <div class="modal-window modal-window-explain">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-badge warning">Wymagany Serwer</span>
+            <h2 id="explain-title">Jak uruchomić ten projekt?</h2>
+          </div>
+          <button id="explain-close-btn" class="modal-close" title="Zamknij">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body explain-body">
+          <div class="explain-notice">
+            <div class="notice-icon">💡</div>
+            <div class="notice-text">
+              <strong id="explain-task-name">Ten projekt zawiera backend PHP i bazę danych MySQL.</strong>
+              <p>
+                Przeglądarka internetowa nie potrafi samodzielnie przetworzyć kodu PHP ani połączyć się z bazą danych bez lokalnego serwera (np. XAMPP).
+              </p>
+            </div>
+          </div>
+
+          <div class="explain-options">
+            <div class="option-card">
+              <h4>1. 👁️ Szybki podgląd kodu i kwerend (bez instalacji)</h4>
+              <p>Możesz od razu zobaczyć kompletny kod źródłowy PHP, strukturę tabel i kwerendy SQL bezpośrednio w panelu.</p>
+              <button id="explain-view-code-btn" class="btn btn-code">
+                👁️ Otwórz podgląd kodu i rozwiązania
+              </button>
+            </div>
+
+            <div class="option-card">
+              <h4>2. 📥 Pobierz gotową paczkę ZIP z instrukcją</h4>
+              <p>Pobierz archiwum zawierające wszystkie pliki projektu, bazę <code>.sql</code> oraz plik <code>README.md</code> z instrukcją krok po kroku.</p>
+              <a id="explain-download-zip-btn" href="#" class="btn btn-zip" download>
+                📦 Pobierz paczkę ZIP zadania
+              </a>
+            </div>
+
+            <div class="option-card">
+              <h4>3. 🚀 Pełne uruchomienie w XAMPP (krok po kroku)</h4>
+              <ol class="explain-steps">
+                <li>Uruchom <strong>Apache</strong> i <strong>MySQL</strong> w panelu XAMPP.</li>
+                <li>Zaimportuj plik <code>.sql</code> w <code>http://localhost/phpmyadmin</code>.</li>
+                <li>Skopiuj folder projektu do katalogu <code>C:\xampp\htdocs\</code>.</li>
+                <li>Otwórz w przeglądarce adres <code id="explain-localhost-url">http://localhost/...</code>.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="explain-footer-actions">
+            <a id="explain-force-open-btn" href="#" target="_blank" class="btn btn-secondary">
+              🌐 Spróbuj otworzyć plik mimo to
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- General Help Modal -->
+    <div
+      id="help-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop" id="help-modal-backdrop"></div>
+      <div class="modal-window modal-window-help">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-badge">Pomoc</span>
+            <h2>Instrukcja obsługi panelu i projektów</h2>
+          </div>
+          <button id="help-close-btn" class="modal-close" title="Zamknij">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body help-body">
+          <div class="help-section">
+            <h3>🚀 1. Jak korzystać z panelu</h3>
+            <ul>
+              <li>
+                <strong>Wyszukiwarka i filtry:</strong> Wpisz rok, słowo kluczowe (np. <em>ryby</em>, <em>komis</em>, <em>pesel</em>) lub wybierz kwalifikację (E.14, EE.09).
+              </li>
+              <li>
+                <strong>Otwieranie projektów:</strong> Kliknij <em>🚀 Otwórz</em>. Strony HTML otworzą się od razu, a dla projektów PHP otrzymasz wskazówki i podgląd kodu.
+              </li>
+              <li>
+                <strong>Podgląd kodu:</strong> Przycisk <em>👁️ Rozwiązanie</em> otwiera okno z kodem źródłowym, kwerendami SQL i opisem co było robione.
+              </li>
+              <li>
+                <strong>Pobieranie ZIP:</strong> Każda paczka ZIP zawiera komplet plików oraz plik <code>README.md</code> wyjaśniający co zrobić po pobraniu.
+              </li>
+            </ul>
+          </div>
+
+          <div class="help-section">
+            <h3>🐘 2. Jak uruchomić PHP z bazą MySQL w XAMPP</h3>
+            <ol>
+              <li>Pobierz i uruchom <strong>XAMPP</strong> (moduły Apache i MySQL).</li>
+              <li>Wejdź na <code>http://localhost/phpmyadmin</code> i zaimportuj plik <code>.sql</code>.</li>
+              <li>Skopiuj folder z zadaniem do <code>C:\xampp\htdocs\</code>.</li>
+              <li>Otwórz stronę w przeglądarce pod adresem <code>http://localhost/[nazwa_folderu]</code>.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
 
     <script src="data.js"></script>
     <script src="app.js"></script>

@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+}
+
+#cont{
+width: 100%;
+height: 100%;
+}
+
+#baner{
+background-color: rgba(66, 22, 42);
+color: white;
+font-size: 140%;
+text-align: center;
+height: 100px;
+}
+
+#pl{
+background-color: rgb(142, 115, 110);
+width: 30%;
+height: 600px;
+color: white;
+float: left;
+}
+
+#pp{
+background-color: rgb(230, 230, 230);
+width: 70%;
+height: 600px;
+font-size: 140%;
+float: left;
+}
+
+#footer{
+background-color: rgb(142, 115,110);
+color: white;
+text-align: right;
+height: 100px;
+clear: both;
+}
