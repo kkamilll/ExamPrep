@@ -1,7 +1,7 @@
 {
   "name": "exam-prep",
   "version": "2.0.0",
-  "description": "Clean and fast vocational exam preparation hub for INF.03, E.14, and EE.09 certifications with live code preview and solution packages",
+  "description": "Przejrzysty i szybki panel przygotowania do egzaminów zawodowych INF.03 / E.14 / EE.09 z podglądem kodu i gotowymi paczkami rozwiązań",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,11 +10,11 @@
     "build:data": "node build-data.js"
   },
   "keywords": [
-    "exam-prep",
-    "vocational-exams",
+    "egzaminy-zawodowe",
     "inf03",
     "e14",
     "ee09",
+    "technikum",
     "php",
     "sql",
     "mysql",

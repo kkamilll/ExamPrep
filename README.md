@@ -1,77 +1,77 @@
-# 🎓 Exam Prep — Vocational Exam Hub (INF.03 / E.14 / EE.09)
+# 🎓 Exam Prep — Panel Przygotowania do Egzaminów Zawodowych (INF.03 / E.14 / EE.09)
 
-A modern, fast, and structured web hub for browsing Polish CKE vocational exams, viewing solution source code (PHP, HTML, CSS, JavaScript, SQL), copying queries, reading step-by-step instructions, and downloading clean exam packages.
+Nowoczesny, szybki i przejrzysty panel do przeglądania oficjalnych arkuszy CKE, podglądu kodu rozwiązań (PHP, HTML, CSS, JavaScript, SQL), kopiowania kwerend, instrukcji krok po kroku oraz pobierania uporządkowanych paczek zadań.
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Szybki start (3 sekundy)
 
-You can launch the dashboard using any of the following methods:
+Możesz uruchomić panel na **dowolny z poniższych sposobów**:
 
-### Option 1 (Recommended — with Built-in Server & Instant Code Viewer)
-Run the following command in your terminal:
+### Sposób 1 (Zalecany — z wbudowanym serwerem i podglądem kodu)
+W terminalu wpisz:
 ```bash
 npm start
 ```
-*(or `npm run dev`)* — this starts the zero-dependency Node.js server and automatically opens `http://localhost:3000` in your default browser.
+*(lub `npm run dev`)* — automatycznie uruchomi lokalny, lekki serwer Node.js (zero zewnętrznych zależności) i otworzy przeglądarkę pod adresem `http://localhost:3000`.
 
-### Option 2 (One-Click Launch on Windows)
-Double-click the **`start.bat`** file in the root directory.
+### Sposób 2 (Jedno kliknięcie na Windows)
+Uruchom plik **`start.bat`**.
 
-### Option 3 (Direct Static Browser Mode)
-Simply open the **`index.html`** file in any modern web browser.
-
----
-
-## 🔍 Features
-
-- 📄 **Official PDF Exam Sheets** — Open original CKE exam papers directly in a new tab.
-- 🚀 **Direct Launch** — Run HTML pages instantly or receive guided steps for PHP/MySQL setups.
-- 👁️ **Embedded Code & Solution Viewer** — Inspect and copy PHP, SQL, HTML, CSS, and JS code directly in the browser with syntax highlighting.
-- 📖 **Task Summaries & Walkthroughs** — Clean explanation for every exam task detailing implemented requirements, file manifest, and setup instructions.
-- 📥 **Clean ZIP Packages** — Download clean `.zip` archives containing the complete source code, database dumps, and instructions.
-- ⚡ **Instant Search & Filtering** — Filter by qualification (`E.14`, `EE.09`, `Exercises`), exam session, topic keywords, and available tech assets.
-- 🌙 **Sleek Dark Mode Theme** — Clean modern UI designed for readability and quick access.
+### Sposób 3 (Bezpośrednio w przeglądarce)
+Otwórz plik **`index.html`** w dowolnej przeglądarce internetowej.
 
 ---
 
-## 🐘 Running Dynamic PHP & MySQL Projects (via XAMPP)
+## 🔍 Co oferuje panel?
 
-Source code and SQL queries can be viewed directly within the web app. If you wish to execute the backend PHP scripts dynamically with a live MySQL database:
-
-1. Download and install [XAMPP](https://www.apachefriends.org/), then start both **Apache** and **MySQL** modules.
-2. Place this repository in `C:\xampp\htdocs\exam_prep\`.
-3. Open `http://localhost/phpmyadmin` in your browser and import the relevant `.sql` database file.
-4. Access the project at `http://localhost/exam_prep/index.html`.
+- 📄 **Arkusze PDF** — otwieranie oryginalnych treści arkuszy CKE w nowej karcie.
+- 🚀 **Bezpośrednie uruchamianie** — natychmiastowe otwieranie stron HTML oraz interaktywne instrukcje krok po kroku dla projektów PHP/MySQL.
+- 👁️ **Wbudowany podgląd kodu i rozwiązań** — przeglądaj i kopiuj kod PHP, SQL, HTML, CSS i JS bezpośrednio w przeglądarce z kolorowaniem składni, bez otwierania zewnętrznych edytorów.
+- 📖 **Wytłumaczenie i instrukcja do każdego zadania** — przejrzysty opis każdego egzaminu z podsumowaniem wykonanych wymagań, listą plików i instrukcją uruchomienia.
+- 📥 **Czyste paczki ZIP** — natychmiastowe pobieranie uporządkowanego archiwum każdego zadania z kompletem kodu, zrzutem bazy SQL i instrukcją `README.md`.
+- ⚡ **Wyszukiwarka i filtry** — filtrowanie po kwalifikacji (`E.14`, `EE.09`, `Ćwiczenia`), roczniku, tematyce oraz dostępnych zasobach (PDF, PHP, SQL, HTML).
+- 🌙 **Elegancki tryb ciemny** — nowoczesny, responsywny interfejs stworzony z myślą o wygodzie i czytelności.
 
 ---
 
-## 📁 Repository Structure
+## 🐘 Uruchamianie projektów dynamicznych PHP z bazą MySQL (XAMPP)
+
+Kod PHP i zapytania SQL możesz wygodnie czytać bezpośrednio w panelu. Jeśli chcesz przetestować pełne dynamiczne działanie skryptów PHP:
+
+1. Pobierz i zainstaluj [XAMPP](https://www.apachefriends.org/), a następnie uruchom moduły **Apache** oraz **MySQL**.
+2. Umieść ten folder w `C:\xampp\htdocs\exam_prep\`.
+3. W `http://localhost/phpmyadmin` zaimportuj odpowiedni plik `.sql` zadania.
+4. Otwórz projekt pod adresem `http://localhost/exam_prep/index.html`.
+
+---
+
+## 📁 Struktura repozytorium
 
 ```text
 exam_prep/
-├── 📄 index.html           # Web application dashboard
-├── 📄 styles.css           # UI styling and dark theme
-├── 📄 app.js               # Client-side filtering, search, and modal viewer logic
-├── 📄 server.js            # Zero-dependency local HTTP server
-├── 📄 start.bat            # Windows quick-launcher script
-├── 📄 data.js              # Indexed dataset of exams and code files
-├── 📄 build-data.js        # Dataset builder script
-├── 📂 Kwalifikacja_E14/    # E.14 qualification exam sheets and solutions
-├── 📂 Kwalifikacja_EE09/   # EE.09 qualification exam sheets and solutions
-└── 📂 Cwiczenia_i_Zadania/ # Practice exercises, trial exams, and JS challenges
+├── 📄 index.html           # Główny interfejs panelu WWW
+├── 📄 styles.css           # Style CSS i motyw graficzny
+├── 📄 app.js               # Logika filtrowania, wyszukiwania i okien modalnych
+├── 📄 server.js            # Wbudowany lokalny serwer HTTP (zero zależności)
+├── 📄 start.bat            # Skrót uruchomieniowy na system Windows
+├── 📄 data.js              # Baza zindeksowanych zadań i plików
+├── 📄 build-data.js        # Generator indeksu zadań
+├── 📂 Kwalifikacja_E14/    # Arkusze i uporządkowane rozwiązania E.14
+├── 📂 Kwalifikacja_EE09/   # Arkusze i uporządkowane rozwiązania EE.09
+└── 📂 Cwiczenia_i_Zadania/ # Zadania ćwiczeniowe, arkusze próbne i ćwiczenia JS
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Zastosowane technologie
 
-- **Frontend:** Vanilla HTML5, Modern CSS3 (custom properties, responsive grid/flexbox), Vanilla JavaScript (ES6+).
-- **Backend (Server):** Node.js native `http` & `fs` modules (no external npm dependencies required).
-- **Exam Technologies:** PHP (mysqli), MySQL / MariaDB, HTML5, CSS3, JavaScript.
+- **Frontend:** HTML5, Modern CSS3 (zmienne CSS, flexbox/grid), Czysty JavaScript (ES6+).
+- **Lokalny serwer:** Natywny Node.js (moduły `http`, `fs`, `path` — bez `node_modules`).
+- **Technologie egzaminacyjne:** PHP (mysqli), MySQL / MariaDB, HTML5, CSS3, JavaScript.
 
 ---
 
-## 📄 License
+## 📄 Licencja
 
-Educational resource repository designed for vocational exam preparation.
+Materiały edukacyjne przeznaczone do przygotowania do egzaminów zawodowych.
